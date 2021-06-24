@@ -1,0 +1,22 @@
+﻿@{
+}
+<h1>Route: @ViewBag.RouteValues["routeName"]</h1>
+
+<h2>Route: @ViewBag.Path</h2>
+
+<h3 style="margin-top: 20px; border-top: solid 3px red;">Route Values</h3>
+
+@foreach (var item in ViewBag.RouteValues)
+{
+    if (item.Key != "routeName")
+    {
+        <p>@item.Key: @item.Value.ToString()</p>
+    }
+}
+
+<h3 style="margin-top: 20px; border-top: solid 3px red;">Query String Values</h3>
+
+@foreach (var item in ViewBag.Query)
+{
+    <p>@item.Key: @item.Value.ToString()</p>
+}
